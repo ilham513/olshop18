@@ -1,2 +1,2 @@
 <?
-echo 'ok bos';
+echo 'ok REVISI';
