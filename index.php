@@ -1,21 +1,37 @@
 <?php  
-$posting_raw = array("satu", "dua", "tiga", "empat", "lima", "enam","tujuh", "delapan", "sembilan", "sepuluh", "sebelas"); 
 
+$json = '
+{"produk":[
+    { "nama_produk":"produk a", "gambar_produk":"https://dummyimage.com/600x400/000/fff&text=gambar-A", "deskripsi_produk":"deskripsi produk a", "harga_produk":0, "jenis_produk":"jenis produk a" },    
+	{ "nama_produk":"produk b", "gambar_produk":"https://dummyimage.com/600x400/000/fff&text=gambar-B", "deskripsi_produk":"deskripsi produk b", "harga_produk":100000, "jenis_produk":"jenis produk b" }
+]}
+';
+
+$posting_raw = json_decode($json, true);
 
 //algoritma p array
+//inisiasi p
 if(isset($_GET['p'])){
 	$p = $_GET['p'];
 }else{
 	$p = 0;
 }
 
+$raw_item_total = count($posting_raw["produk"]);
+
+$p_total = $raw_item_total / 6;
+// echo floor($p_total);die();
+
 $mulai = $p * 6;
 $puncak = $mulai + 6;
 
 for ($a = $mulai; $a < $puncak; $a++) {
-	if ($posting_raw[$a] == null){continue;}
-  $posting[] = $posting_raw[$a];
+	if ($posting_raw["produk"][$a] == null){continue;} //jika kosong-> longkap
+	$posting[] = $posting_raw["produk"][$a];
 }
+
+// echo "<pre>"; var_dump($posting);die();
+
 
 
 //algoritma dinamik-grid
@@ -116,13 +132,13 @@ $total_items = count($posting);
 				echo '
 				  <div class="col-lg-4 col-md-6 mb-4">
 					<div class="card h-100">
-					  <a href="produk/ninja-vs-monster"><img class="card-img-top" src="https://i.postimg.cc/6qMC14kn/image.png" alt=""></a>
+					  <a href="produk/ninja-vs-monster"><img class="card-img-top" src="'. $posting["gambar_produk"] .'" alt=""></a>
 					  <div class="card-body">
 						<h4 class="card-title">
-						  <a href="produk/ninja-vs-monster">'. $posting .'</a>
+						  <a href="produk/ninja-vs-monster">'. $posting["nama_produk"] .'</a>
 						</h4>
-						<h5>RP 100.000</h5>
-						<p class="card-text">Seorang ninja mencoba melarikan diri dari kejaran monster yang mencoba memp*rk*s*nya!</p>
+						<h5>Rp '. number_format($posting["harga_produk"]) .'</h5>
+						<p class="card-text">'. $posting["deskripsi_produk"] .'</p>
 					  </div>
 					  <div class="card-footer">
 						<button type="button" class="btn btn-block btn-success">Beli Sekarang</button>
@@ -140,13 +156,19 @@ $total_items = count($posting);
 		
 			  
 		<div class="d-flex justify-content-between">
+		
+		<? if($p != 0){ //jika bukan page 0(awal)-> tampilkan ?>
 			<div class="pager-button btn btn-outline-primary disabled">
-				<a>&larr; Sebelumnya</a>
+				<a href="?p=<? echo ($p-1) ?>">&larr; Sebelumnya</a>
 			</div>
-
+		<? } ?>
+		
+		<? if($p != floor($p_total)){ ?>
 			<div class="pager-button btn btn-outline-primary">
-				<a>Selanjutnya &rarr;</a>
+				<a href="?p=<? echo ($p+1) ?>">Selanjutnya &rarr;</a>
 			</div>
+		<? } ?>
+		
 		</div>
 		<br/><br/>
 
