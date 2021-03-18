@@ -1,12 +1,6 @@
 <?php  
 
-$json = '
-{"produk":[
-    { "nama_produk":"produk a", "gambar_produk":"https://dummyimage.com/600x400/000/fff&text=gambar-A", "deskripsi_produk":"deskripsi produk a", "harga_produk":0, "jenis_produk":"jenis produk a" },    
-	{ "nama_produk":"produk b", "gambar_produk":"https://dummyimage.com/600x400/000/fff&text=gambar-B", "deskripsi_produk":"deskripsi produk b", "harga_produk":100000, "jenis_produk":"jenis produk b" }
-]}
-';
-
+$json = file_get_contents('data.json');
 $posting_raw = json_decode($json, true);
 
 //algoritma p array
@@ -95,9 +89,9 @@ $total_items = count($posting);
 
         <h1 class="my-4">Toko Online 18+ Terlengkap di Indonesia!</h1>
         <div class="list-group">
-          <a href="#" class="list-group-item">Game Dewasa PC</a>
-          <a href="#" class="list-group-item">Game Dewasa PC</a>
-          <a href="#" class="list-group-item">Game Dewasa PC</a>
+          <a href="#" class="list-group-item">Ilustrasi</a>
+          <a href="#" class="list-group-item">Video</a>
+          <a href="#" class="list-group-item">Majalah</a>
         </div>
 
       </div>
@@ -111,7 +105,7 @@ $total_items = count($posting);
           </ol>
           <div class="carousel-inner" role="listbox 900x350">
             <div class="carousel-item active">
-              <img class="d-block img-fluid" src="https://i.postimg.cc/LsXDDntf/image.png" alt="First slide">
+              <img class="d-block img-fluid" src="https://dummyimage.com/900x400/000/fff&text=Banner" alt="First slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
