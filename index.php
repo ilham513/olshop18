@@ -21,7 +21,8 @@ $puncak = $mulai + 6;
 
 for ($a = $mulai; $a < $puncak; $a++) {
 	if ($posting_raw["produk"][$a] == null){continue;} //jika kosong-> longkap
-	$posting[] = $posting_raw["produk"][$a];
+	$posting_raw["produk"][$a]['id_produk'] = $a;
+	$posting[$a] = $posting_raw["produk"][$a];
 }
 
 // echo "<pre>"; var_dump($posting);die();
@@ -119,23 +120,23 @@ $total_items = count($posting);
         </div>
 		
 		<?
-		foreach ($posting as $i=>$posting) {
+		foreach ($posting as $i=>$posting) { 
 			$x = ($x > 3) ? 1 : $x; //kalau udah lebih 3 -> jadiin 1
 			echo ($x == 1) ? "<div class='row'>" : ''; //kalau 1 -> buka tag
 
 				echo '
 				  <div class="col-lg-4 col-md-6 mb-4">
 					<div class="card h-100">
-					  <a href="produk/ninja-vs-monster"><img class="card-img-top" src="'. $posting["gambar_produk"] .'" alt=""></a>
+					  <a href="produk/?id_produk='. $posting["id_produk"] .'"><img class="card-img-top" src="'. $posting["gambar_produk"] .'" alt=""></a>
 					  <div class="card-body">
 						<h4 class="card-title">
-						  <a href="produk/ninja-vs-monster">'. $posting["nama_produk"] .'</a>
+						  <a href="produk/?id_produk='. $posting["id_produk"] .'">'. $posting["nama_produk"] .'</a>
 						</h4>
 						<h5>Rp '. number_format($posting["harga_produk"]) .'</h5>
 						<p class="card-text">'. $posting["deskripsi_produk"] .'</p>
 					  </div>
 					  <div class="card-footer">
-						<button type="button" class="btn btn-block btn-success">Beli Sekarang</button>
+						<a href="#INI NGARAH KE BILLING LANGSUNG!"><button type="button" class="btn btn-block btn-success">Beli Sekarang</button></a>
 					  </div>
 					</div>
 				  </div>		  

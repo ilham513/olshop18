@@ -21,7 +21,7 @@
 	"nama_produk":"produk c", 
 	"gambar_produk":"https://dummyimage.com/600x400/000/fff&text=gambar-C",
 	"deskripsi_produk":"deskripsi produk c",
-	"harga_produk":0,
+	"harga_produk":100000,
 	"jenis_produk":"jenis produk c" 
 	}
     
