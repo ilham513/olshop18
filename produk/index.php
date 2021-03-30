@@ -27,6 +27,8 @@ $produk = $posting_raw['produk']["$id_produk"];
 
 	<!-- Custom styles for this template -->
   <link href="css/shop-item.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -74,14 +76,17 @@ $produk = $posting_raw['produk']["$id_produk"];
           <div class="card-body">
 			  <img class="card-img-top img-fluid" src="<? echo $produk['gambar_produk'] ?>" alt="" wid>
 			  <div class="card-body">
-				<h3 class="card-title"><? echo ucwords($produk['nama_produk']) ?></h3>
+				<div class="row">
+				  <div class="col-8"><h3 class="card-title"><? echo ucwords($produk['nama_produk']) ?></h3></div>
+				  <div class="col-4" style="text-align: right;color: red;"><h4><i class="fa fa-heart-o"></i> 0</h4></div><!-- fa fa-heart (on) -->
+				</div>
 				<h4 style="color:green">RP <? echo number_format($produk['harga_produk']) ?> 
 				<? echo $produk['harga_produk'] == 0 ? '(Gratis)' : '(PREMIUM)' ?></h4><br/>
 				<p class="card-text jumbotron">
 				<? echo $produk['deskripsi_produk'] ?>
 				</p>				
 				<hr>
-				<a href="checkout?id_produk=<? echo $id_produk ?>" class="btn btn-success btn-block">Beli Sekarang</a>
+				<a href="checkout?id_produk=<? echo $id_produk ?>" class="btn  	btn-success btn-block">Beli Sekarang</a>
           </div>
         </div>
         <!-- /.card -->
