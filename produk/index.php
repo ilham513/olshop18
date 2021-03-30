@@ -20,7 +20,7 @@ $produk = $posting_raw['produk']["$id_produk"];
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Beli <? echo $produk['nama_produk'] ?></title>
+  <title>Beli <? echo ucwords($produk['nama_produk']) ?></title>
 
   <!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -59,7 +59,7 @@ $produk = $posting_raw['produk']["$id_produk"];
     <div class="row">
 
       <div class="col-lg-3">
-        <h1 class="my-4">Beli <? echo $produk['nama_produk'] ?></h1>
+        <h1 class="my-4">Beli <? echo ucwords($produk['nama_produk']) ?></h1>
 	  </div>
       <!-- /.col-lg-3 -->
 
@@ -74,14 +74,14 @@ $produk = $posting_raw['produk']["$id_produk"];
           <div class="card-body">
 			  <img class="card-img-top img-fluid" src="<? echo $produk['gambar_produk'] ?>" alt="" wid>
 			  <div class="card-body">
-				<h3 class="card-title"><? echo $produk['nama_produk'] ?></h3>
-				<h4>RP <? echo number_format($produk['harga_produk']) ?> 
-				<? echo $produk['harga_produk'] == 0 ? '(Gratis)' : '(PREMIUM)' ?></h4>
-				<p class="card-text">
+				<h3 class="card-title"><? echo ucwords($produk['nama_produk']) ?></h3>
+				<h4 style="color:green">RP <? echo number_format($produk['harga_produk']) ?> 
+				<? echo $produk['harga_produk'] == 0 ? '(Gratis)' : '(PREMIUM)' ?></h4><br/>
+				<p class="card-text jumbotron">
 				<? echo $produk['deskripsi_produk'] ?>
 				</p>				
 				<hr>
-				<a href="#NGARAH KE BILLING" class="btn btn-success btn-block">Beli Sekarang</a>
+				<a href="checkout?id_produk=<? echo $id_produk ?>" class="btn btn-success btn-block">Beli Sekarang</a>
           </div>
         </div>
         <!-- /.card -->

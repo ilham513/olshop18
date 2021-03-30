@@ -89,11 +89,14 @@ $total_items = count($posting);
       <div class="col-lg-3">
 
         <h1 class="my-4">Toko Online 18+ Terlengkap di Indonesia!</h1>
+		
+		<!-- DISABLE MENU
         <div class="list-group">
           <a href="#" class="list-group-item">Ilustrasi</a>
           <a href="#" class="list-group-item">Video</a>
           <a href="#" class="list-group-item">Majalah</a>
         </div>
+		-->
 
       </div>
       <!-- /.col-lg-3 -->
@@ -132,11 +135,11 @@ $total_items = count($posting);
 						<h4 class="card-title">
 						  <a href="produk/?id_produk='. $posting["id_produk"] .'">'. $posting["nama_produk"] .'</a>
 						</h4>
-						<h5>Rp '. number_format($posting["harga_produk"]) .'</h5>
+						<h5 style="color:green">Rp '. number_format($posting["harga_produk"]) .'</h5>
 						<p class="card-text">'. $posting["deskripsi_produk"] .'</p>
 					  </div>
 					  <div class="card-footer">
-						<a href="#INI NGARAH KE BILLING LANGSUNG!"><button type="button" class="btn btn-block btn-success">Beli Sekarang</button></a>
+						<a href="produk/checkout?id_produk='. $posting["id_produk"] .'"><button type="button" class="btn btn-block btn-success">Beli Sekarang</button></a>
 					  </div>
 					</div>
 				  </div>		  

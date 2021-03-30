@@ -6,15 +6,17 @@
 	"gambar_produk":"https://dummyimage.com/600x400/000/fff&text=gambar-A",
 	"deskripsi_produk":"deskripsi produk a",
 	"harga_produk":0,
-	"jenis_produk":"jenis produk a" 
+	"jenis_produk":"jenis produk a", 
+	"link_download":"https://dummyimage.com/600x400/000/fff&text=Produk-A" 
 	},
     
     { 
 	"nama_produk":"produk b", 
 	"gambar_produk":"https://dummyimage.com/600x400/000/fff&text=gambar-B",
 	"deskripsi_produk":"deskripsi produk b",
-	"harga_produk":0,
-	"jenis_produk":"jenis produk b" 
+	"harga_produk":10000,
+	"jenis_produk":"jenis produk b", 
+	"link_download":"https://dummyimage.com/600x400/000/fff&text=Produk-B" 
 	},
     
     { 
@@ -22,8 +24,8 @@
 	"gambar_produk":"https://dummyimage.com/600x400/000/fff&text=gambar-C",
 	"deskripsi_produk":"deskripsi produk c",
 	"harga_produk":100000,
-	"jenis_produk":"jenis produk c" 
+	"jenis_produk":"jenis produk c" , 
+	"link_download":"https://dummyimage.com/600x400/000/fff&text=Produk-C" 
 	}
-    
 ]
 }
