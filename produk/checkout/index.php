@@ -86,7 +86,7 @@ $produk = $posting_raw['produk']["$id_produk"];
 		
 		
         <div class="col-md-8 order-md-1">
-          <form class="needs-validation" action="http://hinata18.is-best.net/transaksi/gratis.php" method="post" novalidate>
+          <form class="needs-validation" action="http://hinata18.is-best.net/transaksi/gratis.php" method="get" novalidate>
 		  
 		  <input type="hidden" name="link_download" value="<? echo $produk['link_download'] ?>">
 		  
