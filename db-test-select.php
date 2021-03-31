@@ -3,8 +3,6 @@
 <body>
 
 <?php
-echo "<table style='border: solid 1px black;'>";
- echo "<tr><th>Id</th><th>Firstname</th><th>Lastname</th></tr>";
 
 class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
@@ -12,15 +10,7 @@ class TableRows extends RecursiveIteratorIterator {
     }
 
     function current() {
-        return "<td style='width: 150px; border: 1px solid black;'>" . parent::current(). "</td>";
-    }
-
-    function beginChildren() {
-        echo "<tr>";
-    }
-
-    function endChildren() {
-        echo "</tr>" . "\n";
+        return " " . parent::current(). " ";
     }
 }
   
@@ -51,7 +41,6 @@ catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
 $conn = null;
-echo "</table>";
 ?>
 
 </body>
