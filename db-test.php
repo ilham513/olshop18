@@ -16,7 +16,7 @@ try {
 
   // sql to create table
   $sql = "CREATE TABLE love(
-   id integer(255),
+   id int,
    timestamp timestamp default current_timestamp
    )
   ";
