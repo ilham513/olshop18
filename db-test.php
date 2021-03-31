@@ -15,10 +15,9 @@ try {
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   // sql to create table
-  $sql = "CREATE TABLE love(
-   id int,
-   timestamp timestamp default current_timestamp
-   )
+  $sql = "
+  INSERT INTO love (id)
+  VALUES(1)
   ";
 
   // use exec() because no results are returned
