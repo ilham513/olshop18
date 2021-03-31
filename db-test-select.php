@@ -27,7 +27,16 @@ $dbname    =  $db["path"];
 try {
     $conn = new PDO("pgsql:dbname=$dbname;host=$host", $dbuser, $dbpass);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT id FROM love");
+    $stmt = $conn->prepare("
+    SELECT
+        id,
+        COUNT (id)
+    FROM
+        love
+    GROUP BY
+        id;
+
+    ");
     $stmt->execute();
 
     // set the resulting array to associative
