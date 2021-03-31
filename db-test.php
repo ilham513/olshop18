@@ -14,7 +14,7 @@ try {
   // set the PDO error mode to exception
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  // sql to create table
+  // sql INSERT
   $sql = "
   INSERT INTO love (id)
   VALUES(1)
@@ -22,7 +22,7 @@ try {
 
   // use exec() because no results are returned
   $conn->exec($sql);
-  echo "Table created successfully";
+  echo "Insert successfully";
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
 }
