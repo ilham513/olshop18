@@ -29,7 +29,6 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare("
     SELECT
-        id,
         COUNT (id)
     FROM
         love
