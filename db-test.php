@@ -1,11 +1,32 @@
-<?php
-$host='ec2-23-21-229-200.compute-1.amazonaws.com';
-$db = 'dbs95ig0jfd9t9';
-$username = 'dbs95ig0jfd9t9';
-$password = '03fe251d1c9bda2cdbb6b39833de6508d8c75ec6cc18b3f2e4bab39214c5e14b';
+<?
+$db = parse_url(getenv("DATABASE_URL"));
+$db["path"] = ltrim($db["path"], "/");
 
-$myPDO = new PDO('pgsql:host=ec2-23-21-229-200.compute-1.amazonaws.com;dbname=dbs95ig0jfd9t9', 'dbs95ig0jfd9t9', '03fe251d1c9bda2cdbb6b39833de6508d8c75ec6cc18b3f2e4bab39214c5e14b');
+// konfigurasi koneksi
+$host       =  $db["host"];
+$dbuser     =  $db["user"];
+$dbpass     =  $db["pass"];
+$port       =  $db["port"];
+$dbname    =  $db["path"];
 
-$result = $myPDO->query("SELECT lastname FROM employees");
+try {
+  $conn = new PDO("pgsql:dbname=$dbname;host=$host", $dbuser, $dbpass); 
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-var_dump($result);
+  // sql to create table
+  $sql = "CREATE TABLE love(
+   id int(255),
+   timestamp timestamp default current_timestamp
+   )
+  ";
+
+  // use exec() because no results are returned
+  $conn->exec($sql);
+  echo "Table MyGuests created successfully";
+} catch(PDOException $e) {
+  echo $sql . "<br>" . $e->getMessage();
+}
+
+$conn = null;
+?>
