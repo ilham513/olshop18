@@ -65,8 +65,10 @@ $conn = null;
 
 
 
-
-
+//jika gaada cookie
+if(!isset($_COOKIE['cookie'])){
+	$data = array();
+}
 
 //OLAH DATA DARI COOKIES
 $data = unserialize($_COOKIE['cookie'], ["allowed_classes" => false]);
