@@ -40,6 +40,8 @@ try {
         COUNT (id)
     FROM
         love
+	WHERE
+		id = '$id_produk'
     GROUP BY
         id;
 
