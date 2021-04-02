@@ -35,5 +35,5 @@ $conn = null;
 
 
 
-header('Location: index.php?id_produk='.$id);
+header('Location: index.php?id_produk='.$id_produk);
 ?>
