@@ -33,6 +33,20 @@ try {
 $conn = null;
 
 
+//buat cookie logic
+if(isset($_COOKIE['cookie'])){
+	$data = unserialize($_COOKIE['cookie'], ["allowed_classes" => false]);
+}
+else{
+	$data = array();
+}
+
+//push id_produk
+array_push($data,$id_produk);
+$data = array_unique($data); //filter array
+
+setcookie('cookie', serialize($data), time()+360000 * 100);
+
 
 
 header('Location: index.php?id_produk='.$id_produk);
