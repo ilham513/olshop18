@@ -59,6 +59,20 @@ catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
 $conn = null;
+
+
+
+
+
+
+
+
+
+//OLAH DATA DARI COOKIES
+$data = unserialize($_COOKIE['cookie'], ["allowed_classes" => false]);
+$data_implode = implode(",",$data);
+echo '<pre>';var_dump($data_implode);die();
+
 ?>
 
 <!DOCTYPE html>
@@ -129,7 +143,7 @@ $conn = null;
 			  <div class="card-body">
 				<div class="row">
 				  <div class="col-8"><h3 class="card-title"><? echo ucwords($produk['nama_produk']) ?></h3></div>
-				  <div class="col-4" style="text-align: right;color: red;"><a href="love.php?id_produk=<? echo $id_produk ?>"><h4><i class="fa fa-heart-o"></i><? echo $love_count ?> </h4></a></div>
+				  <div class="col-4" style="text-align: right;color: red;"><a href="love.php?id_produk=<? echo $id_produk ?>"><h4><i class="fa fa-heart-o"></i>  <? echo $love_count ?> </h4></a></div>
 				  <!-- fa fa-heart (on) -->
 				</div>
 				<h4 style="color:green">RP <? echo number_format($produk['harga_produk']) ?> 
