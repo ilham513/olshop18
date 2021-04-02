@@ -60,21 +60,6 @@ catch(PDOException $e) {
 }
 $conn = null;
 
-
-
-
-
-
-//jika gaada cookie
-if(!isset($_COOKIE['cookie'])){
-	$data = array();
-}
-
-//OLAH DATA DARI COOKIES
-$data = unserialize($_COOKIE['cookie'], ["allowed_classes" => false]);
-$data_implode = implode(",",$data);
-echo '<pre>';var_dump($data_implode);die();
-
 ?>
 
 <!DOCTYPE html>
