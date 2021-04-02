@@ -8,6 +8,55 @@ $posting_raw = json_decode($json, true);
 // echo '<pre>';var_dump($posting_raw['produk']["$id_produk"]);die();
 
 $produk = $posting_raw['produk']["$id_produk"];
+
+
+
+//ambil love
+class TableRows extends RecursiveIteratorIterator {
+    function __construct($it) {
+        parent::__construct($it, self::LEAVES_ONLY);
+    }
+
+    function current() {
+        return parent::current();
+    }
+}
+  
+$db = parse_url(getenv("DATABASE_URL"));
+$db["path"] = ltrim($db["path"], "/");
+
+// konfigurasi koneksi
+$host       =  $db["host"];
+$dbuser     =  $db["user"];
+$dbpass     =  $db["pass"];
+$port       =  $db["port"];
+$dbname    =  $db["path"];
+
+try {
+    $conn = new PDO("pgsql:dbname=$dbname;host=$host", $dbuser, $dbpass);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $conn->prepare("
+    SELECT
+        COUNT (id)
+    FROM
+        love
+    GROUP BY
+        id;
+
+    ");
+    $stmt->execute();
+
+    // set the resulting array to associative
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+        $love_count = $v;
+    }
+}
+catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+$conn = null;
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +127,8 @@ $produk = $posting_raw['produk']["$id_produk"];
 			  <div class="card-body">
 				<div class="row">
 				  <div class="col-8"><h3 class="card-title"><? echo ucwords($produk['nama_produk']) ?></h3></div>
-				  <div class="col-4" style="text-align: right;color: red;"><h4><i class="fa fa-heart-o"></i> 0</h4></div><!-- fa fa-heart (on) -->
+				  <div class="col-4" style="text-align: right;color: red;"><a href="love.php?id_produk=<? echo $id_produk ?>"><h4><i class="fa fa-heart-o"></i><? echo $love_count ?> </h4></a></div>
+				  <!-- fa fa-heart (on) -->
 				</div>
 				<h4 style="color:green">RP <? echo number_format($produk['harga_produk']) ?> 
 				<? echo $produk['harga_produk'] == 0 ? '(Gratis)' : '(PREMIUM)' ?></h4><br/>
