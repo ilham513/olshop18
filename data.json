@@ -2,30 +2,10 @@
 "produk":
 [
     { 
-	"nama_produk":"produk a", 
-	"gambar_produk":"https://dummyimage.com/600x400/000/fff&text=gambar-A",
-	"deskripsi_produk":"deskripsi produk a",
+	"nama_produk":"Menggambar Gadis Telanjng", 	"gambar_produk":"https://i.postimg.cc/J496mY01/Mengambbar-1-mp4-snapshot-01-24-2021-04-04-07-26-36.jpg",
+	"deskripsi_produk":"Cewek cantik diajak untuk menjadi model tlanjang di kelas menggambar.",
 	"harga_produk":0,
-	"jenis_produk":"jenis produk a", 
-	"link_download":"https://dummyimage.com/600x400/000/fff&text=Produk-A" 
-	},
-    
-    { 
-	"nama_produk":"produk b", 
-	"gambar_produk":"https://dummyimage.com/600x400/000/fff&text=gambar-B",
-	"deskripsi_produk":"deskripsi produk b",
-	"harga_produk":10000,
-	"jenis_produk":"jenis produk b", 
-	"link_download":"https://dummyimage.com/600x400/000/fff&text=Produk-B" 
-	},
-    
-    { 
-	"nama_produk":"produk c", 
-	"gambar_produk":"https://dummyimage.com/600x400/000/fff&text=gambar-C",
-	"deskripsi_produk":"deskripsi produk c",
-	"harga_produk":100000,
-	"jenis_produk":"jenis produk c" , 
-	"link_download":"https://dummyimage.com/600x400/000/fff&text=Produk-C" 
+	"jenis_produk":"Video", 	"link_download":"https://drive.google.com/file/d/1JZoBajKNcGfKCT-gGNRf35h56M4YtiRt/view?usp=sharing" 
 	}
 ]
 }
