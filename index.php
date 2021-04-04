@@ -55,6 +55,8 @@ $total_items = count($posting);
 
   <!-- Custom styles for this template -->
   <link href="css/shop-homepage.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -135,14 +137,33 @@ $total_items = count($posting);
 						<h4 class="card-title">
 						  <a href="produk/?id_produk='. $posting["id_produk"] .'">'. $posting["nama_produk"] .'</a>
 						</h4>
-						<h5 style="color:green">Rp '. number_format($posting["harga_produk"]) .'</h5>
+						
+						<div class="row">
+						  <div class="col-8">
+							<h5 style="color:green">Rp '. number_format($posting["harga_produk"]) .'</h5>
+						  </div>
+						  <div class="col-4" style="text-align: right;">
+							<i class="fa fa-eye"></i> <span id="visits_'. $posting["id_produk"] .'">...</span>
+						  </div>
+						</div>						
+						
 						<p class="card-text">'. $posting["deskripsi_produk"] .'</p>
 					  </div>
 					  <div class="card-footer">
 						<a href="produk/checkout?id_produk='. $posting["id_produk"] .'"><button type="button" class="btn btn-block btn-success">Beli Sekarang</button></a>
 					  </div>
 					</div>
-				  </div>		  
+				  </div>
+
+				  <script>
+				  var xhr = new XMLHttpRequest();
+					xhr.open("GET", "https://api.countapi.xyz/hit/olshop18.com/visits_'. $posting["id_produk"] .'");
+					xhr.responseType = "json";
+					xhr.onload = function() {
+						document.getElementById(\'visits_'. $posting["id_produk"] .'\').innerText = this.response.value;
+					}
+					xhr.send();
+				  </script>
 				';
 
 			echo ($x == 3) || ($z == $total_items) ? "</div><br/>\n" : ''; //kalau 3 or mentok -> tutup pagar
