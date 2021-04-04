@@ -109,7 +109,7 @@ $total_items = count($posting);
           </ol>
           <div class="carousel-inner" role="listbox 900x350">
             <div class="carousel-item active">
-              <img class="d-block img-fluid" src="https://dummyimage.com/900x400/000/FF0000&text=OLSHOP18" alt="First slide">
+              <img class="d-block img-fluid" src="https://dummyimage.com/900x400/000/fff&text=18" alt="First slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
