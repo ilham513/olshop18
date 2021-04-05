@@ -135,7 +135,7 @@ $total_items = count($posting);
 					  <a href="produk/?id_produk='. $posting["id_produk"] .'"><img class="card-img-top" src="'. $posting["gambar_produk"] .'" alt=""></a>
 					  <div class="card-body">
 						<h4 class="card-title">
-						  <a href="produk/?id_produk='. $posting["id_produk"] .'">'. $posting["nama_produk"] .'</a>
+						  <a href="produk/?id_produk='. $posting["id_produk"] .'">'. $posting["jenis_produk"] .' '. $posting["nama_produk"] .'</a>
 						</h4>
 						
 						<div class="row">
@@ -157,7 +157,7 @@ $total_items = count($posting);
 
 				  <script>
 				  var xhr = new XMLHttpRequest();
-					xhr.open("GET", "https://api.countapi.xyz/hit/olshop18.com/visits_'. $posting["id_produk"] .'");
+					xhr.open("GET", "https://api.countapi.xyz/get/olshop18.com/visits_'. $posting["id_produk"] .'");
 					xhr.responseType = "json";
 					xhr.onload = function() {
 						document.getElementById(\'visits_'. $posting["id_produk"] .'\').innerText = this.response.value;

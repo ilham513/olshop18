@@ -72,7 +72,7 @@ $conn = null;
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Beli <? echo ucwords($produk['nama_produk']) ?></title>
+  <title>Beli <? echo ucwords($produk['jenis_produk']) ?></title>
 
   <!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -113,7 +113,7 @@ $conn = null;
     <div class="row">
 
       <div class="col-lg-3">
-        <h1 class="my-4">Beli <? echo ucwords($produk['nama_produk']) ?></h1>
+        <h1 class="my-4">Beli <? echo ucwords($produk['jenis_produk']) ?> <? echo ucwords($produk['nama_produk']) ?></h1>
 	  </div>
       <!-- /.col-lg-3 -->
 
@@ -129,7 +129,7 @@ $conn = null;
 			  <img class="card-img-top img-fluid" src="<? echo $produk['gambar_produk'] ?>" alt="" wid>
 			  <div class="card-body">
 				<div class="row">
-				  <div class="col-8"><h3 class="card-title"><? echo ucwords($produk['nama_produk']) ?></h3></div>
+				  <div class="col-8"><h3 class="card-title"><? echo ucwords($produk['jenis_produk']) ?> <? echo ucwords($produk['nama_produk']) ?></h3></div>
 				  <div class="col-4" style="text-align: right;color: red;"><a style="color:red" href="love.php?id_produk=<? echo $id_produk ?>"><h4><i class="fa fa-heart-o"></i>  <? echo $love_count ?> </h4></a></div>
 				  <!-- fa fa-heart (on) -->
 				</div>
