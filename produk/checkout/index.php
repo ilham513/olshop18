@@ -93,7 +93,7 @@ $produk = $posting_raw['produk']["$id_produk"];
             <div class="mb-3">
               <label for="nama">Nama</label>
               <div class="input-group">
-                <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Kamu" required>
+                <input type="text" name="nama" class="form-control" id="nama" placeholder="Tulis nama kamu..." required>
                 <div class="invalid-feedback" style="width: 100%;">
                   Isi Nama!
                 </div>
@@ -102,7 +102,8 @@ $produk = $posting_raw['produk']["$id_produk"];
 
             <div class="mb-3">
               <label for="email">Email</label>
-              <input type="email" name="email" class="form-control" id="email" placeholder="Emailkamu@gmail.com" required>
+              <input type="email" name="email" class="form-control" id="email" placeholder="Tulis email kamu..." required>
+			  <small id="emailHelp" style="color:red !important" class="form-text text-muted">Pastikan email kamu benar!</small>
               <div class="invalid-feedback">
                 Isi Email!
               </div>
