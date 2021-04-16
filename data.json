@@ -2,7 +2,8 @@
 "produk":
 [
     { 
-	"nama_produk":"Main di Gedung Olahraga", 	"gambar_produk":"https://i.imgur.com/gPO2Ur8.jpg",
+	"nama_produk":"Main di Gedung Olahraga", 	
+	"gambar_produk":"https://i.imgur.com/gPO2Ur8.jpg",
 	"deskripsi_produk":"
 	<p>
 		<b>Informasi</b><br/>
@@ -17,14 +18,17 @@
 	</p>
 	",
 	"harga_produk":0,
-	"jenis_produk":"Video", 	"link_download":"https://drive.google.com/file/d/13AmexSDlbFi05wqlryCBQmE_HgM1Lu5b/view?usp=sharing" 
+	"jenis_produk":"Video", 	
+	"link_download":"https://drive.google.com/file/d/13AmexSDlbFi05wqlryCBQmE_HgM1Lu5b/view?usp=sharing" 
 	}
 	,
     { 
-	"nama_produk":"Menggambar Gadis Telanjng", 	"gambar_produk":"https://i.postimg.cc/J496mY01/Mengambbar-1-mp4-snapshot-01-24-2021-04-04-07-26-36.jpg",
+	"nama_produk":"Menggambar Gadis Telanjng", 	
+	"gambar_produk":"https://i.postimg.cc/J496mY01/Mengambbar-1-mp4-snapshot-01-24-2021-04-04-07-26-36.jpg",
 	"deskripsi_produk":"Cewek cantik diajak untuk menjadi model tlanjang di kelas menggambar.",
 	"harga_produk":0,
-	"jenis_produk":"Video", 	"link_download":"https://drive.google.com/file/d/1JZoBajKNcGfKCT-gGNRf35h56M4YtiRt/view?usp=sharing" 
+	"jenis_produk":"Video", 	
+	"link_download":"https://drive.google.com/file/d/1JZoBajKNcGfKCT-gGNRf35h56M4YtiRt/view?usp=sharing" 
 	}
 ]
 }
