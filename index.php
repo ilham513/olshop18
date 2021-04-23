@@ -4,7 +4,7 @@ $json = file_get_contents('data.json');
 $posting_raw = json_decode($json, true);
 
 //reverse array php
-$posting_raw["produk"] = array_reverse($posting_raw["produk"]);
+$posting_raw["produk_reverse"] = array_reverse($posting_raw["produk"]);
 
 //algoritma p array
 //inisiasi p
