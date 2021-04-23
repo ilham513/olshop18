@@ -103,7 +103,7 @@ $produk = $posting_raw['produk']["$id_produk"];
             <div class="mb-3">
               <label for="email">Email</label>
               <input type="email" name="email" class="form-control" id="email" placeholder="Tulis email kamu..." required>
-			  <small id="emailHelp" style="color:red !important" class="form-text text-muted">Pastikan email kamu benar!</small>
+			  <small id="emailHelp" style="color:red !important" class="form-text text-muted">Produk akan dikirimkan via Email, jadi pastikan email kamu benar!</small>
               <div class="invalid-feedback">
                 Isi Email!
               </div>
