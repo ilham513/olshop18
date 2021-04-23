@@ -4,9 +4,11 @@ $json = file_get_contents('data.json');
 $posting_raw = json_decode($json, true);
 
 echo '<pre>'; var_dump($posting_raw);
+echo '<hr>';
 //reverse array php
 $posting_raw = array_reverse($posting_raw);
 echo '<pre>'; var_dump($posting_raw);
+die();
 
 //algoritma p array
 //inisiasi p
