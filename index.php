@@ -3,9 +3,6 @@
 $json = file_get_contents('data.json');
 $posting_raw = json_decode($json, true);
 
-//reverse array php
-$posting_raw["produk"] = array_reverse($posting_raw["produk"]);
-
 //algoritma p array
 //inisiasi p
 if(isset($_GET['p'])){
@@ -27,7 +24,8 @@ for ($a = $mulai; $a < $puncak; $a++) {
 	$posting_raw["produk"][$a]['id_produk'] = $a;
 	$posting[$a] = $posting_raw["produk"][$a];
 }
-
+//reverse array php
+$posting_raw["produk"] = array_reverse($posting_raw["produk"]);
 echo "<pre>"; var_dump($posting);die();
 
 
