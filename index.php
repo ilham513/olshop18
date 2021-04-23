@@ -3,8 +3,10 @@
 $json = file_get_contents('data.json');
 $posting_raw = json_decode($json, true);
 
+echo '<pre>'; var_dump($posting_raw);
 //reverse array php
 $posting_raw = array_reverse($posting_raw);
+echo '<pre>'; var_dump($posting_raw);
 
 //algoritma p array
 //inisiasi p
