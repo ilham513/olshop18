@@ -25,8 +25,10 @@ for ($a = $mulai; $a < $puncak; $a++) {
 	$posting[$a] = $posting_raw["produk"][$a];
 }
 //reverse array php
-$posting_raw["produk"] = array_reverse($posting_raw["produk"]);
-echo "<pre>"; var_dump($posting);die();
+$posting = array_reverse($posting);
+
+//test urutan
+// echo "<pre>"; var_dump($posting);die();
 
 
 
