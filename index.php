@@ -3,6 +3,9 @@
 $json = file_get_contents('data.json');
 $posting_raw = json_decode($json, true);
 
+//reverse array php
+$posting_raw = array_reverse($posting_raw);
+
 //algoritma p array
 //inisiasi p
 if(isset($_GET['p'])){
